@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desculpa aí, parça 🎀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1020;--ink:#f4f6ff;--blue:#7fd0ff;--pink:#ff9ec7;--card:#171b33}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 Nunito,system-ui,sans-serif;overflow-x:hidden}
+h1,h2{font-family:'Bagel Fat One',system-ui,sans-serif;font-weight:400;line-height:1.05;margin:0 0 .5em}
+h1{font-size:clamp(2.6rem,11vw,5.5rem);color:var(--ink)}
+h1 span{color:var(--pink)}
+h2{font-size:clamp(1.8rem,6vw,2.8rem);color:var(--blue)}
+section{max-width:640px;margin:0 auto;padding:3.5rem 1.4rem}
+.hero{text-align:left;padding-top:2rem}
+.hero img{width:100%;max-width:420px;aspect-ratio:1;object-fit:cover;border-radius:50% 50% 50% 8%;display:block;margin:0 0 1.5rem;border:4px solid var(--blue);box-shadow:0 0 60px #7fd0ff55}
+.hero p{max-width:32ch;font-size:1.2rem}
+ul.crimes{list-style:none;padding:0;margin:0}
+ul.crimes li{background:var(--card);border-left:5px solid var(--pink);padding:.9rem 1.1rem;margin-bottom:.8rem;border-radius:0 12px 12px 0}
+ul.crimes small{display:block;color:#a9b0d6}
+.infinito{text-align:center;background:#000;max-width:none;padding:3rem 1.4rem}
+.infinito>div{max-width:520px;margin:0 auto}
+.infinito img{width:100%;border-radius:16px;display:block;margin-bottom:1.2rem;transition:filter .4s}
+.infinito p{color:#c9d0f5}
+#tentar{font:700 1rem Nunito,sans-serif;background:transparent;color:var(--blue);border:2px solid var(--blue);padding:.7rem 1.3rem;border-radius:99px;cursor:pointer}
+#tentar:hover,#tentar:focus-visible{background:var(--blue);color:#000}
+#status{min-height:3.2em;margin-top:1rem;color:var(--pink);font-weight:700}
+.promessas{display:grid;gap:.8rem;padding:0;list-style:none}
+.promessas li{background:var(--card);padding:1rem 1.2rem;border-radius:14px}
+.final{text-align:center}
+.botoes{position:relative;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;min-height:4rem;margin-top:1.5rem}
+.botoes button{font:700 1.1rem Nunito,sans-serif;border:0;border-radius:99px;padding:.9rem 1.8rem;cursor:pointer}
+#sim{background:var(--pink);color:#2a0b1a}
+#nao{background:#2a2f55;color:var(--ink);transition:transform .25s}
+button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+#dominio{position:fixed;inset:0;background:#000;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;z-index:10}
+#dominio.on{display:flex;animation:abrir 1.2s ease-out}
+#dominio h2{color:var(--blue);font-size:clamp(2rem,9vw,4rem);text-shadow:0 0 30px var(--blue)}
+#dominio p{max-width:34ch;font-size:1.15rem}
+#dominio button{margin-top:1.5rem;background:var(--pink);border:0;border-radius:99px;padding:.8rem 1.6rem;font:700 1rem Nunito,sans-serif;cursor:pointer}
+@keyframes abrir{from{clip-path:circle(0% at 50% 50%)}to{clip-path:circle(75% at 50% 50%)}}
+footer{text-align:center;padding:2rem;color:#7c84b3;font-size:.9rem}
+@media (prefers-reduced-motion:reduce){#dominio.on{animation:none}#nao{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <img src="gojo-sorrindo.jpg" alt="Gojo Satoru sorrindo de braços abertos, com um lacinho rosa no cabelo">
+  <h1>Desculpa aí, <span>parça.</span></h1>
+  <p>O mais forte do mundo perdeu uma luta: a de não pisar na bola com um amigo.</p>
+</section>
+
+<section>
+  <h2>Ficha criminal</h2>
+  <ul class="crimes">
+    <li>Te deixei no vácuo<small>Eu tava salvando o mundo. Mais ou menos.</small></li>
+    <li>Fiz piada na hora errada<small>A piada era boa. O timing foi péssimo.</small></li>
+    <li>Falei "relaxa, eu resolvo"<small>E não resolvi nada. Culpa minha.</small></li>
+  </ul>
+</section>
+
+<section class="infinito" aria-labelledby="tit-inf">
+  <div>
+    <img id="foto-inf" src="gojo-infinito.jpg" alt="Gojo de cabeça baixa, óculos e lacinho rosa, em contraste forte">
+    <h2 id="tit-inf">Técnica do Infinito</h2>
+    <p>Nada me alcança. Nem golpe, nem maldição, nem sermão. Mas a sua chateação passou direto. Isso, meu amigo, é respeito.</p>
+    <button id="tentar" type="button">Desativar o Infinito</button>
+    <div id="status" aria-live="polite"></div>
+  </div>
+</section>
+
+<section>
+  <h2>O que eu prometo</h2>
+  <ul class="promessas">
+    <li>🍰 Um doce grande. Tenho padrões.</li>
+    <li>🎮 Uma rodada do que você quiser, sem reclamar (reclamo só um pouco).</li>
+    <li>🎀 Um lacinho rosa igual ao meu. Você vai ficar lindo(a).</li>
+    <li>📞 Responder no mesmo dia. Sem Domínio, sem desculpa.</li>
+  </ul>
+</section>
+
+<section class="final">
+  <h2>Amigos de novo?</h2>
+  <p>Sem você, eu sou só o segundo mais forte.</p>
+  <div class="botoes">
+    <button id="sim" type="button">Sim, tá perdoado</button>
+    <button id="nao" type="button">Não</button>
+  </div>
+</section>
+
+<div id="dominio" role="dialog" aria-modal="true" aria-labelledby="dom-tit">
+  <h2 id="dom-tit">Expansão de Domínio: Amizade Ilimitada</h2>
+  <p>Dentro deste domínio, toda briga é perdoada e todo mundo ganha um doce. Obrigado por não me deixar de fora. 💙</p>
+  <button id="fechar" type="button">Fechar o domínio</button>
+</div>
+
+<footer>Feito com culpa e um lacinho rosa 🎀</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const msgs = [
+  "Tentando... o Infinito não cede.",
+  "Ainda nada. Sou forte demais até pra pedir desculpa.",
+  "Ok, ok. Desativei. Desculpa de verdade, parça. 💙"
+];
+let n = 0;
+$('tentar').addEventListener('click', () => {
+  $('status').textContent = msgs[Math.min(n, msgs.length - 1)];
+  $('foto-inf').style.filter = n >= 2 ? 'none' : 'brightness(' + (1 + (n + 1) * .2) + ')';
+  n++;
+});
+
+const nao = $('nao');
+function fugir() {
+  const x = (Math.random() - .5) * Math.min(window.innerWidth - 120, 320);
+  const y = (Math.random() - .5) * 160;
+  nao.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+}
+nao.addEventListener('mouseenter', fugir);
+nao.addEventListener('touchstart', e => { e.preventDefault(); fugir(); }, { passive: false });
+nao.addEventListener('click', fugir);
+
+$('sim').addEventListener('click', () => { $('dominio').classList.add('on'); $('fechar').focus(); });
+$('fechar').addEventListener('click', () => $('dominio').classList.remove('on'));
+</script>
+</body>
+</html>
